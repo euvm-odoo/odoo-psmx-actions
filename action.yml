@@ -1,0 +1,12 @@
+name: Odoo Git Guidelines / PR Title
+description: Check that PR title matches Odoo Git Guidelines
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Checking PR Title
+        # Pipe pr title to grep. Note that RegEx is escaped: \[\w+\] \w+: .+
+        run: |
+          echo "${{github.event.pull_request.title}}" | grep -P "\[\w+\] \w+: .+"
