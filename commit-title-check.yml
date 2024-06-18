@@ -1,7 +1,7 @@
 name: Odoo Git Guidelines / Commit Name
 description: Check if commit name follows Odoo guidelines
 
-jobs:
+runs:
   check:
     runs-on: ubuntu-latest
     steps:
